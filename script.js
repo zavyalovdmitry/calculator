@@ -25,11 +25,6 @@ class Calculator {
     chooseOperation(operation) {
         if (this.currentOperand === '.')
             return;
-        //if (this.currentOperand === '.' && this.currentOperand.includes('-')) 
-
-        // if (operation === 'SQRT') {
-        //     this.currentOperand = '0.5';
-        // }
 
         if (this.currentOperand === '' && this.operation !== 'SQRT') {
             if (operation === '-') {
@@ -75,7 +70,7 @@ class Calculator {
             if (prev < 0) {
                 computation = 'ERROR';
             }
-            // computation = Math.pow(prev, 0.5);
+            
             this.operation = 'POW';
             current = 0.5;
             decimalCount += 5;
@@ -106,8 +101,6 @@ class Calculator {
                     return;
             }
         }
-
-        // decimalCount = decimalCount < 5 ? 5 : decimalCount;
 
         this.newCalc = true;
         this.currentOperand = computation === 'ERROR' ? computation : +computation.toFixed(decimalCount).toString();
